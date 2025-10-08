@@ -1,0 +1,16 @@
+{
+  "name": "qdrant-rest-grpc-benchmark",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "grpc.js",
+  "scripts": {
+    "test": "node rest.js && node grpc.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@qdrant/js-client-grpc": "^1.15.1",
+    "axios": "^1.5.0"
+  }
+}
