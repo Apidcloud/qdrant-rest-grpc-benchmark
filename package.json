@@ -1,10 +1,10 @@
 {
   "name": "qdrant-rest-grpc-benchmark",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "grpc.js",
   "scripts": {
-    "test": "node rest-fast.js && node rest.js && node grpc.js"
+    "test": "node rest-fast.js && node rest-fast-gzip.js && node rest.js && node grpc.js"
   },
   "author": "",
   "license": "ISC",

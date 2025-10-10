@@ -26,13 +26,15 @@ Specifically, we get 10 results from each of the searches within the batch, mean
 This was measured on a dual-core ubuntu 22.14 machine. For reference, running it on a Qdrant cluster with 1 shard and 3 nodes, with each node having 8 vCPUs, yields similar results.
 
 Running this benchmark with node 22.20.0 yields the following results (with full payloads):
-- Fast REST perf avg over 100 runs: 13.314ms (without gzip, unlike the other 2 approaches)
+- Fast REST perf avg over 100 runs: 13.314ms
+- Fast REST (gzip) perf avg over 100 runs: 50.031ms
 - REST perf avg over 100 runs: 59.447 ms
 - gRPC perf avg over 100 runs: 226.307 ms
 
 If we run it without payloads we can see that gRPC is a lot faster than the REST with axios counterpart:
 - Fast REST perf avg over 100 runs: 1.476ms (without gzip, unlike the other 2 approaches)
+- Fast REST (gzip) perf avg over 100 runs: 38.402 ms
 - REST perf avg over 100 runs: 40.699 ms
 - gRPC perf avg over 100 runs: 4.908 ms
 
-Both ```grpc.js``` and ```rest.js``` use gzip compression. I couldn't try the gRPC without gzip compression yet, but somone on discord did say it gets down to 50ms in their setup (also, for reference, in their setup the full payload REST perf avg is 37ms vs my 59ms). ```rest-fast.js```, on the other hand, doesn't use gzip compression. But if we do use gzip with this faster alternative, the average over 100 runs in my dual-core setup is 50.031ms.
+```grpc.js```, ```rest.js```, and ```rest-fast-gzip.js``` use gzip compression, whereas ```rest-fast.js``` doesn't. I couldn't try the gRPC without gzip compression yet, but somone on discord did say it gets down to 50ms in their setup (also, for reference, in their setup the full payload REST perf avg is 37.721ms vs my 59.447ms).
