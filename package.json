@@ -1,16 +1,17 @@
 {
   "name": "qdrant-rest-grpc-benchmark",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "grpc.js",
   "scripts": {
-    "test": "node rest.js && node grpc.js"
+    "test": "node rest-fast.js && node rest.js && node grpc.js"
   },
   "author": "",
   "license": "ISC",
   "description": "Benchmark of search batch points Qdrant 1.15.5",
   "dependencies": {
     "@qdrant/js-client-grpc": "^1.15.1",
-    "axios": "^1.5.0"
+    "axios": "^1.5.0",
+    "undici": "^7.16.0"
   }
 }

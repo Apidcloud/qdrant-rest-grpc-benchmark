@@ -20,15 +20,17 @@ Specifically, we get 10 results from each of the searches within the batch, mean
 - Unzip the Qdrant db snapshot and load it (should contain between 750 and 900 points) 
 - Install nodejs 22.20
 - Run ```npm ci``` to install dependencies
-- Run ```npm test``` to run the rest and grpc benchmarks __with__ payloads
+- Run ```npm test``` to run the fast rest, rest, and grpc benchmarks __with__ payloads
 
 # Results
 This was measured on a dual-core ubuntu 22.14 machine. For reference, running it on a Qdrant cluster with 1 shard and 3 nodes, with each node having 8 vCPUs, yields similar results.
 
 Running this benchmark with node 22.20.0 yields the following results (with full payloads):
+- Fast REST perf avg over 100 runs: 13.314ms
 - REST perf avg over 100 runs: 59.447 ms
 - gRPC perf avg over 100 runs: 226.307 ms
 
 If we run it without payloads we can see that gRPC is a lot faster than the REST with axios counterpart:
+- Fast REST perf avg over 100 runs: 1.476ms
 - REST perf avg over 100 runs: 40.699 ms
 - gRPC perf avg over 100 runs: 4.908 ms
