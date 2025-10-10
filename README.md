@@ -1,3 +1,6 @@
+# Reference
+This is a minimum reproducible example for Qdrant's issue [7366](https://github.com/qdrant/qdrant/issues/7366)
+
 # Query
 We are doing 4 search requests in a batch, with the filter being a payload index (multi tenancy):
 ```json
