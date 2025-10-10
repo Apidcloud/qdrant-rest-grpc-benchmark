@@ -30,7 +30,7 @@ Running this benchmark with node 22.20.0 yields the following results (with full
 - REST perf avg over 100 runs: 59.447 ms
 - gRPC perf avg over 100 runs: 226.307 ms
 
-If we run it without payloads we can see that gRPC is a lot faster than the REST with axios counterpart:
+If we run it without payloads we can see that gRPC is a lot faster than the REST with axios counterpart, but still slower than the Fast REST alternative:
 - Fast REST perf avg over 100 runs: 1.476ms
 - REST perf avg over 100 runs: 40.699 ms
 - gRPC perf avg over 100 runs: 4.908 ms
